@@ -26,3 +26,28 @@ CREATE INDEX index_id_patient_medic_history ON medical_histories(patient_id);
 CREATE INDEX index_invoice_items_id ON invoice_items(invoice_id);
 
 CREATE INDEX index_treatment_id ON invoice_items(treatment_id);
+
+-- ALTER INT TO DECIMAL
+
+ALTER TABLE invoices
+ALTER COLUMN total_amount type DECIMAL(10,2);
+-- ALTER INT TO DECIMAL
+
+ALTER TABLE invoice_items
+ALTER COLUMN quantity type DECIMAL(10,2);
+-- ALTER INT TO DECIMAL
+
+ALTER TABLE invoice_items 
+ALTER COLUMN unit_price type DECIMAL(10,2);
+
+-- CREATE JOIN TABLE BETWEEN MEDICAL HISTORY AND TREATMENTS
+CREATE TABLE medical_histories_treatment(
+treatment_id INT, 
+CONSTRAINT treatment_id FOREIGN KEY (treatment_id) REFERENCES treatments(id), medical_history_id INT, 
+CONSTRAINT medical_history_id FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id), 
+PRIMARY KEY (treatment_id, medical_history_id)
+);
+
+-- CREATE INDEX
+CREATE INDEX medical_histories_treatments_medical_history_id ON medical_histories_treatment(medical_history_id);
+CREATE INDEX medical_histories_treatments_treatment_id ON medical_histories_treatment(treatment_id);
