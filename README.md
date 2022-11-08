@@ -24,6 +24,7 @@ git clone https://github.com/wadaudzai/medical_database/.git
 
 - GitHub: [@wadaudzai](https://github.com/wadaudzai)
 - LinkedIn: [@wadaudzai](https://www.linkedin.com/in/)
+- Twitter: [@wadaudzai](https://twitter.com/wadaudzai)
 
 👤 **Fábio Vinícius Dias Lima**
 
